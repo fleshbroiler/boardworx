@@ -4,8 +4,8 @@ import os
 import filehelp
 import time
 
-targetPath = '/home/andy/dev/xos'
-destinationPath = '/home/andy/dev/data/'
+targetPath = '/xos'
+destinationPath = '/data/'
 
 # get the uncompressed size in bytes of the directory to be backed up... 
 targetBytes = os.path.getsize(targetPath)
@@ -19,6 +19,7 @@ print remainingBytes
 
 if targetBytes < remainingBytes:
 	#since we have enough room to back up the target to the destination, get a filename
-	today = destinationPath + time.strftime("%m")+time.strftime("%d")+time.strftime("%y")+"_"+time.strftime("%H")+time.strftime("%M")+time.strftime("%S")+"bak.tar.gz" 
+	#today = destinationPath + "hdmobile_"+time.strftime("%m")+time.strftime("%d")+time.strftime("%y")+"_"+time.strftime("%H")+time.strftime("%M")+time.strftime("%S")+"bak.tar.gz" 
+	today = destinationPath + "hdmobile_"+time.strftime("%m")+time.strftime("%d")+time.strftime("%y")+".tar.gz" 
 	filehelp.zipdir(today, targetPath)
 	
