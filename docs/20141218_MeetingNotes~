@@ -1,3 +1,20 @@
 Meeting Notes 12-18-2014
 Bob Tatar & Andy St John at XOS
 
+Implement backup and restore using a shell script and a set of restricted commands.
+See busybox. Nothing that doesn't live on the HMM. Test on the HMM early and often.
+
+Base work on existing scripts like skipTube, etc.
+Script usage should always include explicit names, paths, etc.
+
+tar process should start by creating a signature file, with a unique 'signature', that will be used to verify that the archive may be 
+confidently unpacked and deployed.
+
+created tar file will be named something like xosbackup.tgz and gets written to /data
+insure there is adequate space on /data first
+
+
+untar process looks for the signature file, if none found the process will exit
+
+unpacking will proceed to the tmp directory, copied to /xos
+

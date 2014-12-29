@@ -10,6 +10,15 @@ Script usage should always include explicit names, paths, etc.
 tar process should start by creating a signature file, with a unique 'signature', that will be used to verify that the archive may be 
 confidently unpacked and deployed.
 
+so.............
+ create the signature file in /xos
+ tar the contents of /xos to a temp dir like /home/xos
+ mv the archive to /data
+ 
+   
+
+
+
 created tar file will be named something like xosbackup.tgz and gets written to /data
 insure there is adequate space on /data first
 
